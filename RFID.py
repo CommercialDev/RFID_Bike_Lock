@@ -44,7 +44,7 @@ class Application(Frame):
             print(line)
             output = output + line
 
-        print "outside loop"
+        print("outside loop")
         p.stdout.close()
         self.checkout.destroy()
         # output = input()
