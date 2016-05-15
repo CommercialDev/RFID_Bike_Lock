@@ -68,6 +68,7 @@ class Application(Frame):
         if allowed:
             GPIO.output(18, True)
             print("Open the Lock")
+            time.sleep(60)
             os.execv('RFID.py', sys.argv)
         else:
             GPIO.output(18, False)
