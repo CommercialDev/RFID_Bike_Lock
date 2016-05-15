@@ -42,7 +42,7 @@ class Application(Frame):
         for line in iter(p.stdout.readline, b''):
             print("inside loop")
             print(line)
-            output = output + line
+            output = output + str(line)
 
         print("outside loop")
         p.stdout.close()
