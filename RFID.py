@@ -37,7 +37,7 @@ class Application(Frame):
         # self.entrythingy.pack()
 
 
-        p = subprocess.Popen('/home/pi/libnfc-1.4.1/examples/nfc-poll', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.spawn('/home/pi/libnfc-1.4.1/examples/nfc-poll', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         time.sleep(10)
         self.checkout.destroy()
 
