@@ -3,6 +3,7 @@ import time
 import subprocess
 import re
 import RPi.GPIO as GPIO
+GPI0.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 
 class Application(Frame):
