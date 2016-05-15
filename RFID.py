@@ -24,8 +24,8 @@ class Application(Frame):
         print("Checking out bike", bike)
         # self.entrythingy = Entry()
         self.checkout.destroy()
-        self.RFID = Button(self, text = "Scan Your RFID Tag", height = 100, width = 100)
-        self.RFID.pack()
+        # self.RFID = Button(self, text = "Scan Your RFID Tag", height = 100, width = 100)
+        # self.RFID.pack()
         print("Starting RFID Process")
         # here is the application variable
         # self.contents = StringVar()
@@ -49,15 +49,15 @@ class Application(Frame):
         if code:
             allowed = True
             print("Authenticated")
-            self.RFID.destroy()
-            self.auth = Button(self, text = "Authenticated", height = 100, width = 100)
-            self.auth.pack()
+            # self.RFID.destroy()
+            # self.auth = Button(self, text = "Authenticated", height = 100, width = 100)
+            # self.auth.pack()
         else:
             print("Not Authenticated")
             allowed = False
-            self.RFID.destroy()
-            self.auth = Button(self, text = "Not Authenticated", height = 100, width = 100)
-            self.auth.pack()
+            # self.RFID.destroy()
+            # self.auth = Button(self, text = "Not Authenticated", height = 100, width = 100)
+            # self.auth.pack()
         if allowed:
             GPIO.output(18, True)
             print("Open the Lock")
