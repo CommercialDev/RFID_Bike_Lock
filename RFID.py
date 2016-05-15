@@ -6,6 +6,7 @@ import os
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
+GPIO.output(18, False)
 
 class Application(Frame):
     # auth_headers = {'X-ZUMO-APPLICATION': os.environ['RFID_APP_KEY']}
@@ -51,6 +52,7 @@ class Application(Frame):
             print("Open the Lock")
             os.execl('RFID.py')
         else:
+            GPIO.output(18, False)
             print("Do Not Open")
             os.execl('RFID.py')
 
