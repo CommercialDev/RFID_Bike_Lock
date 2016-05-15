@@ -23,7 +23,6 @@ class Application(Frame):
         allowed = False
         print("Checking out bike", bike)
         # self.entrythingy = Entry()
-        self.checkout.destroy()
         # self.RFID = Button(self, text = "Scan Your RFID Tag", height = 100, width = 100)
         # self.RFID.pack()
         print("Starting RFID Process")
@@ -39,6 +38,8 @@ class Application(Frame):
 
         p = subprocess.Popen('/home/pi/libnfc-1.4.1/examples/nfc-poll', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         time.sleep(10)
+        self.checkout.destroy()
+        
         output = str(p.stdout.readline())
         # output = input()
         print(output)
