@@ -12,7 +12,7 @@ class Application(Frame):
 
     def bike(self, bike):
         print("This is Bike", bike)
-        self.checkout = Button(self, text = "Checkout", command = lambda: self.checkoutbike(bike))
+        self.checkout = Button(self, text = "Checkout", command = lambda: self.checkoutbike(bike), height = 300, width = 100)
         self.checkout.pack()
         self.bike1.destroy()
         self.bike2.destroy()
@@ -49,9 +49,9 @@ class Application(Frame):
             print("Open the Lock")
 
     def createWidgets(self):
-        self.bike1 = Button(self, text = "Bike 1", command = lambda: self.bike(1))
+        self.bike1 = Button(self, text = "Bike 1", command = lambda: self.bike(1), height = 300, width = 100)
         self.bike1.pack({"side": "left"})
-        self.bike2 = Button(self, text = "Bike 2", command = lambda: self.bike(2))
+        self.bike2 = Button(self, text = "Bike 2", command = lambda: self.bike(2), height = 300, width = 100)
         self.bike2.pack({"side": "left"})
 
     def __init__(self, master=None):
@@ -60,6 +60,7 @@ class Application(Frame):
         self.createWidgets()
 
 root = Tk()
+root.attributes("-fullscreen", True)
 app = Application(master=root)
 app.mainloop()
 root.destroy()
