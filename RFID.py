@@ -41,7 +41,7 @@ class Application(Frame):
         time.sleep(10)
         self.checkout.destroy()
 
-        output = str(p.stdout)
+        output = str(p.read())
         # output = input()
         print(output)
         code = re.findall('target', output)
