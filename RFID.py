@@ -64,7 +64,7 @@ class Application(Frame):
         self.createWidgets()
 
 root = Tk()
-root.attributes("-fullscreen", True)
+# root.attributes("-fullscreen", True)
 app = Application(master=root)
 app.mainloop()
 root.destroy()
