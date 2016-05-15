@@ -44,7 +44,7 @@ class Application(Frame):
             print("Not Authenticated")
             allowed = False
         if allowed:
-	    GPIO.output(18, True)
+            GPIO.output(18, True)
             print("Open the Lock")
 
     def createWidgets(self):
