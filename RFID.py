@@ -33,7 +33,7 @@ class Application(Frame):
         code = re.findall('\d+', output)[0]
         print(code)
         # auth = requests.get('http://gwsmobileservice.azure-mobile.net/api/getuserinfo?rfid='+code, headers=auth_headers)
-        authjson = auth.json()[0]
+        # authjson = auth.json()[0]
         if code:
             allowed = True
             print("Authenticated")
