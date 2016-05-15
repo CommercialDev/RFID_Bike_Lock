@@ -26,6 +26,7 @@ class Application(Frame):
         self.checkout.destroy()
         self.RFID = Button(self, text = "Scan Your RFID Tag", height = 100, width = 100)
         self.RFID.pack()
+        print("Starting RFID Process")
         # here is the application variable
         # self.contents = StringVar()
         # set it to some value
@@ -37,9 +38,10 @@ class Application(Frame):
 
 
         p = subprocess.Popen('/home/pi/libnfc-1.4.1/examples/nfc-poll', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        time.sleep(15)
+        time.sleep(10)
         output = str(p.stdout.readline())
         # output = input()
+        print(output)
         code = re.findall('target', output)
         print(code)
         # auth = requests.get('http://gwsmobileservice.azure-mobile.net/api/getuserinfo?rfid='+code, headers=auth_headers)
@@ -59,11 +61,11 @@ class Application(Frame):
         if allowed:
             GPIO.output(18, True)
             print("Open the Lock")
-            os.execl('RFID.py')
+            os.execv('RFID.py', sys.argv)
         else:
             GPIO.output(18, False)
             print("Do Not Open")
-            os.execl('RFID.py')
+            os.execv('RFID.py', sys.argv)
 
     def createWidgets(self):
         self.bike1 = Button(self, text = "Bike 1", command = lambda: self.bike(1), height = 100, width = 100)
