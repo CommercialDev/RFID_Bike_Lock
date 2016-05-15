@@ -30,7 +30,7 @@ class Application(Frame):
         # tell the entry widget to watch this variable
         self.entrythingy["textvariable"] = self.contents
 
-        p = subprocess.Popen('bash /home/pi/libnfc-1.4.1/examples/nfc-poll', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen('/home/pi/libnfc-1.4.1/examples/nfc-poll', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         time.sleep(15)
         output = str(p.stdout.readline())
         # output = input()
