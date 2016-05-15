@@ -2,6 +2,7 @@ from tkinter import *
 import time
 import subprocess
 import re
+import os
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
@@ -27,6 +28,7 @@ class Application(Frame):
         self.contents = StringVar()
         # set it to some value
         self.contents.set("Scan your RFID")
+        print("Scan Your RFID Tag")
         # tell the entry widget to watch this variable
         self.entrythingy["textvariable"] = self.contents
 
