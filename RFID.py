@@ -2,6 +2,9 @@ from tkinter import *
 import time
 import subprocess
 import re
+import RPi.GPIO as GPIO
+GPIO.setup(18, GPIO.OUT)
+
 class Application(Frame):
     # auth_headers = {'X-ZUMO-APPLICATION': os.environ['RFID_APP_KEY']}
 
@@ -26,8 +29,8 @@ class Application(Frame):
         # tell the entry widget to watch this variable
         self.entrythingy["textvariable"] = self.contents
 
-        p = subprocess.Popen('./test.sh', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        time.sleep(10)
+        p = subprocess.Popen('./home/pi/libnfc-1.4.1/examples/nfc-poll.sh', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        time.sleep(15)
         output = str(p.stdout.readline())
         # output = input()
         code = re.findall('\d+', output)[0]
@@ -41,8 +44,8 @@ class Application(Frame):
             print("Not Authenticated")
             allowed = False
         if allowed:
+	    GPIO.output(18, True)
             print("Open the Lock")
-            root.destroy()
 
     def createWidgets(self):
         self.bike1 = Button(self, text = "Bike 1", command = lambda: self.bike(1))
