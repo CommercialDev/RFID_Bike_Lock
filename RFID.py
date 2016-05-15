@@ -37,9 +37,9 @@ class Application(Frame):
 
 
         p = subprocess.Popen('/home/pi/libnfc-1.4.1/examples/nfc-poll', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        time.sleep(10)
+        time.sleep(5)
         self.checkout.destroy()
-        
+
         output = str(p.stdout.readline())
         # output = input()
         print(output)
