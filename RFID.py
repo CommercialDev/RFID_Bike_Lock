@@ -34,7 +34,7 @@ class Application(Frame):
         time.sleep(15)
         output = str(p.stdout.readline())
         # output = input()
-        code = re.findall('\d+', output)[0]
+        code = re.findall('target', output)[0]
         print(code)
         # auth = requests.get('http://gwsmobileservice.azure-mobile.net/api/getuserinfo?rfid='+code, headers=auth_headers)
         # authjson = auth.json()[0]
