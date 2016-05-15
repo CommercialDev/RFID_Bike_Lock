@@ -47,6 +47,10 @@ class Application(Frame):
         if allowed:
             GPIO.output(18, True)
             print("Open the Lock")
+            os.execl('RFID.py')
+        else:
+            print("Do Not Open")
+            os.execl('RFID.py')
 
     def createWidgets(self):
         self.bike1 = Button(self, text = "Bike 1", command = lambda: self.bike(1), height = 300, width = 100)
